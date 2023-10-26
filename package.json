@@ -32,6 +32,6 @@
     "electron-packager": "^17.1.2"
   },
   "dependencies": {
-    "node-php-server": "^0.1.2"
+    
   }
 }
