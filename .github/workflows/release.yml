@@ -1,0 +1,44 @@
+name: Build and Release OPEN CMAP
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Electron Forge
+        run: npm install -g electron-forge
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Electron App
+        run: electron-forge make
+
+      - name: Upload Release Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: electron-builds
+          path: out/make
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.RELEASE_OPEN_CMAP }}
+          commit-message: "Automated release from development to main"
+          title: "Automated release from development to main"
+          body: "This is an automated release from the development branch to the main branch."
+          branch: main
+          base: development

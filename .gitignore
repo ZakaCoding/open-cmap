@@ -1,1 +1,3 @@
 node*
+dist/
+# dist/open-cmap-win32-x64/resources/www/node*
