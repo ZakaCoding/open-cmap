@@ -31,6 +31,6 @@
   "devDependencies": {
     "electron": "^27.0.2",
     "electron-packager": "^17.1.2",
-    "electron-prebuilt-compile": "^8.2.0"
+    "electron-prebuilt-compile": "8.2.0"
   }
 }
