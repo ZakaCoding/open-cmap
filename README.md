@@ -1,6 +1,6 @@
 # Hello, Welcome to development page 🔥
 > Application Reflective Open-ended concept mapping build with 💖 by [zakacoding](https://zakacoding.github.io).
-This branch for develop web into an app using electron. for those using this app and install on your computer i'am realy appreciate 🥰
+This branch for develop web into Desktop Application using electron, so you can run local computer. for those using this app and install on your computer i'am realy appreciate 🥰
 
 #### Prerequites
 -   [x] PHP version 8 or above
@@ -20,10 +20,13 @@ This branch for develop web into an app using electron. for those using this app
   npm install
 ```
 ```bash
- cd www
+ cd src\www
 ```
 ```bash
  composer install
+```
+```bash
+ npm install
 ```
 ```bash
  cp .env.example .env
@@ -43,17 +46,17 @@ Congratulation 🎉! You are app is running now! Go to www directory edit start 
 
 #### Build into exe file
 ```bash
- cd www
+ cd src\www
 ```
 ```bash
  npm run build
 ```
-Back to root folder
+Back to root folder (outside src folder)
 ```bash
- cd ..
+ cd .. && cd ..
 ```
 ```bash
- npm run build
+ npm run make
 ```
 
 For researcher feel free to chit chat with me, i am online and ready to help you guys. You can mail me [zakanoor@outlook.co.id](mailto:zakanoor@outlook.co.id) or DM on my IG's :), here my ID's [youn8e_](https://instagram.com/youn8e_)

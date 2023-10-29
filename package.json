@@ -1,0 +1,84 @@
+{
+  "name": "open-cmap",
+  "productName": "open-cmap",
+  "version": "1.0.0",
+  "description": "Application Reflective Open-ended concept mapping",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint src --color"
+  },
+  "keywords": [
+    "Concept",
+    "concept-map",
+    "Laravel",
+    "GoJS",
+    "open-source",
+    "web-based-application",
+    "cmap",
+    "open-ended"
+  ],
+  "author": "ZAKA M. NOOR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZakaCoding/open-cmap/issues"
+  },
+  "homepage": "https://github.com/ZakaCoding/open-cmap#readme",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm",
+        "ignore": [
+          "src/www/.fly",
+          "src/www/.github",
+          "src/Dockerfille",
+          "src/fly.toml"
+        ]
+      },
+      "electronWinstallerConfig": {
+        "name": "open_cmap"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "zakacoding",
+        "name": "open-cmap"
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "opencmap"
+      }
+    }
+  },
+  "dependencies": {
+    "electron-compile": "^6.4.4",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-forge": "^5.2.4",
+    "electron-prebuilt-compile": "8.2.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.33.2"
+  }
+}

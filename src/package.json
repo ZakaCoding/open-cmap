@@ -1,35 +1,16 @@
 {
-  "name": "open-cmap",
+  "name": "src",
   "version": "1.0.0",
-  "description": "Application Reflective Open-ended concept mapping",
+  "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-packager . open-cmap --out=dist",
-    "test": "echo \\\\\\\"Error: no test specified\\\\\\\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ZakaCoding/open-cmap.git"
-  },
-  "keywords": [
-    "Concept",
-    "concept-map",
-    "Laravel",
-    "GoJS",
-    "open-source",
-    "web-based-application",
-    "cmap",
-    "open-ended"
-  ],
-  "author": "ZAKA M. NOOR",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ZakaCoding/open-cmap/issues"
-  },
-  "homepage": "https://github.com/ZakaCoding/open-cmap#readme",
-  "devDependencies": {
-    "electron": "^27.0.2",
-    "electron-packager": "^17.1.2"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "tailwindcss": "^3.3.5"
   }
 }
