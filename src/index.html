@@ -134,13 +134,13 @@
                                             <div class="mt-4 space-y-6">
                                             <div>
                                                 <label class="block mb-3 text-sm font-medium text-gray-600" name="name">
-                                                Database Name
+                                                    Database Name
                                                 </label>
                                                 <input name="DB_DATABASE" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" placeholder="e.g web_based_cmap" required>
                                             </div>
                                             <div class="col-span-full">
                                                 <label class="block mb-3 text-sm font-medium text-gray-600" name="company">
-                                                Database Connection
+                                                    Database Connection
                                                 </label>
                                                 <select name="DB_CONNECTION" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" required>
                                                     <option value="mysql">MySQL</option>
@@ -149,28 +149,38 @@
                                             </div>
                                             <div class="col-span-full">
                                                 <label class="block mb-3 text-sm font-medium text-gray-600" name="email">
-                                                Database Port Connection
+                                                    Database Port Connection
                                                 </label>
                                                 <input name="DB_PORT" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" placeholder="e.g 3306" autocomplete="off" type="text" required>
                                             </div>
                                             <div class="col-span-full">
                                                 <label class="block mb-3 text-sm font-medium text-gray-600" name="email">
-                                                Database Username
+                                                    Database Username
                                                 </label>
                                                 <input name="DB_USERNAME" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" placeholder="Enter Username" autocomplete="off" type="text" required>
                                             </div>
                                             <div class="col-span-full">
                                                 <label class="block mb-3 text-sm font-medium text-gray-600" name="email">
-                                                Database Password
+                                                    Database Password
                                                 </label>
                                                 <input name="DB_PASSWORD" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" autocomplete="off" type="password">
                                             </div>
-                                            <div class="col-span-full" id="migration-button">
+                                            <div class="col-span-full" id="migration-start">
                                                 <button type="submit" class="flex items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full nline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black">
                                                     Run database migration
                                                 </button>
                                             </div>
-                                            
+                                            <div class="col-span-full" id="migration-proccess" hidden>
+                                                <button type="button" class="flex items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full nline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black">
+                                                    <div class="w-5 h-5 border-t-4 border-blue-500 border-solid rounded-full animate-spin mr-2"></div>
+                                                    Migration on proccess
+                                                </button>
+                                            </div>
+                                            <div class="col-span-full" id="migration-success" hidden>
+                                                <button type="button" class="next-button flex items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-green-500 border-2 border-green-500 rounded-full nline-flex hover:bg-transparent hover:border-green-500 hover:text-green-500 focus:outline-none focus-visible:outline-green-500 text-sm focus-visible:ring-green-400">
+                                                    Voila, you made it.
+                                                </button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -266,26 +276,35 @@
         });
 
         ipcRenderer.on('migration-status', (event, catchMessage, isDone) => {
-            if (!isDone) {
-                // Handle the error case
-                console.error("Error:", catchMessage);
-
-                // You can also show an alert or display the error message to the user if needed.
-                alert("Oh no! 🙁 Something went wrong. Please double-check your database configuration. We can't run the migration. But don't worry, we'll get there! 🚀")
-            } else {
+            if (breakReplyMessage('Migration success', catchMessage)) {
                 // Handle the success case
-                console.log("Hooray! 😄 Migration completed successfully. Enjoy your smooth sailing! 🌊");
-
-                document.querySelector('#migration-proccess').setAttribute('hidden', 'hidden');
+                // console.log("Oh no! 🙁 Something went wrong. Please double-check your database configuration. We can't run the migration. But don't worry, we'll get there! 🚀");
+    
+                document.querySelector('#migration-start').setAttribute('hidden', true);
+                document.querySelector('#migration-proccess').setAttribute('hidden', true);
                 document.querySelector('#migration-success').removeAttribute('hidden');
+            } 
+            
+            if (breakReplyMessage('Migration failed', catchMessage)) {
+                // Handle then error case
+                // console.log("Hooray! 😄 Migration completed successfully. Enjoy your smooth sailing! 🌊");
 
-                setTimeout(() => {
-                    hideStep(steps[currentStep]);
-                    currentStep = index + 1;
-                    showStep(steps[currentStep]);
-                }, 2000);
+                document.querySelector('#migration-start').removeAttribute('hidden');
+                document.querySelector('#migration-proccess').setAttribute('hidden', true);
+                document.querySelector('#migration-success').setAttribute('hidden', true);
+    
+                alert("Oh no! 🙁 Something went wrong. Please double-check your database configuration. We can't run the migration. But don't worry, we'll get there! 🚀")
+
             }
         });
+
+        function breakReplyMessage(findText, sourceMessage) {
+            // Error or success message only throw this word
+            // Reply: Migration failed
+            // Reply: Migration success
+
+            return sourceMessage.includes(findText);
+        }
 
         // setup complete
         document.querySelector('#btn-complete').addEventListener('click', () => {
@@ -333,6 +352,10 @@
                 DB_USERNAME,
                 DB_PASSWORD,
             };
+
+            // show proccess button
+            document.querySelector('#migration-start').setAttribute('hidden', true);
+            document.querySelector('#migration-proccess').removeAttribute('hidden');
 
             ipcRenderer.send('setup-database', formData);
             ipcRenderer.send('start-migration');

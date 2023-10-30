@@ -83,8 +83,8 @@ function createWindow() {
 
   // Load the setup.html file if it's the first setup
   if (isFirstSetup) {
-    // checkInstallation();
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    checkInstallation();
+    // mainWindow.loadURL(`file://${__dirname}/index.html`);
   } else {
     // Load your main application HTML file here
     // For example: mainWindow.loadFile('path/to/your/main-app.html');
@@ -135,7 +135,7 @@ ipcMain.on('setup-complete', () => {
   // Logic to handle setup completion, e.g., open the main window
   // You can define this logic based on your application's needs
   // For example: mainWindow.loadFile('path/to/your/main-app.html');
-  mainWindow.loadURL(serverUrl);
+  // mainWindow.loadURL(serverUrl);
 
   // Set to false to indicate that the setup is completed
   isFirstSetup = false;
@@ -144,7 +144,7 @@ ipcMain.on('setup-complete', () => {
   fs.writeFileSync(setupConfig, 'false', 'utf8');
 
   // Restart an APP
-  // restartApp();
+  restartApp();
 });
 
 // Start installation
@@ -199,27 +199,18 @@ ipcMain.on('start-migration', (event) => {
   const installer = path.join(__dirname, '..', 'migration.bat');
   const migrationProcess = spawn('cmd.exe', ['/c', installer]);
 
-  // Set variables to track success and errors
-  let successMessage = '';
-  let errorMessage = '';
-  let migrationErrorHandled = false;
-
   migrationProcess.stdout.on('data', (data) => {
-    successMessage += data;
+    event.reply('migration-status', `${data}`, 1);
   });
 
-  migrationProcess.stderr.on('data', (data) => {
-    if (!migrationErrorHandled) {
-      migrationErrorHandled = true;
-      errorMessage += data;
-      event.reply('migration-status', errorMessage, 0); // Mean error
-    }
-  });
+  // migrationProcess.stderr.on('data', (data) => {
+  //   event.reply('migration-status', `${data}`, 0); // Mean error
+  // });
 
   migrationProcess.on('close', (code) => {
     if (code === 0) {
       // If the process exited with code 0, it was successful
-      event.reply('migration-status', successMessage, 1); // 1 means success
+      event.reply('migration-status', 'Migration success', 1); // 1 means success
     }
   });
 });

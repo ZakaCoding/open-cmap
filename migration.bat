@@ -9,7 +9,7 @@ echo Run migration...
 call php artisan migrate --seed
 
 if errorlevel 1 (
-    echo Migration failed. Handle the error here.
+    echo Migration failed
     exit /b 1
 )
 
