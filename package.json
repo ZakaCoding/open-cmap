@@ -1,7 +1,7 @@
 {
   "name": "open-cmap",
   "productName": "open-cmap",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Application Reflective Open-ended concept mapping",
   "main": "src/main.js",
   "scripts": {
