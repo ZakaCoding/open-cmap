@@ -59,6 +59,10 @@ Back to root folder (outside src folder)
  npm run make
 ```
 
+#### Publish package with electron
+> Don't forget to setup cors.php on www folder, because installation process will run error. be patient :)
+
+##
 For researcher feel free to chit chat with me, i am online and ready to help you guys. You can mail me [zakanoor@outlook.co.id](mailto:zakanoor@outlook.co.id) or DM on my IG's :), here my ID's [youn8e_](https://instagram.com/youn8e_)
 
 CHEERSSS... 🥂
