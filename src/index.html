@@ -259,6 +259,13 @@
             }
         });
 
+        /**
+         * For Debug
+         */
+        //  ipcRenderer.on('installation-process', (event, catchMessage, isDone) => {
+        //     console.log(catchMessage, isDone);
+        //  });
+
         ipcRenderer.on('installation-status', (event, catchMessage, isDone) => {
             if(isDone) {
                 // hidden loading btn
@@ -276,6 +283,9 @@
         });
 
         ipcRenderer.on('migration-status', (event, catchMessage, isDone) => {
+            // debug
+            // console.log('Reply: ', catchMessage);
+
             if (breakReplyMessage('Migration success', catchMessage)) {
                 // Handle the success case
                 // console.log("Oh no! 🙁 Something went wrong. Please double-check your database configuration. We can't run the migration. But don't worry, we'll get there! 🚀");
