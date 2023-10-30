@@ -14,85 +14,16 @@
                 <div class="flex w-full mx-auto">
                     <div class="inline-flex items-center m-auto align-middle">
                         <div class="max-w-6xl p-10 overflow-hidden bg-white rounded-3xl lg:p-20">
-                            <div class="max-w-lg" id="failed">
+                            <div class="max-w-lg">
                                 <div>
                                     <p class="text-2xl font-medium tracking-tight text-black sm:text-4xl">
-                                        Huhu... :( looks like App didn't run properly
+                                        Welcome to the Setup Process
                                     </p>
                                     <p class="max-w-xl mt-4 text-base tracking-tight text-gray-600">
-                                        Don't be sad. you just need too run <span class="text-blue-400">Installation.bat</span> and follow the instruction. You can found this file on
-                                    </p>
-
-                                    <div class="p-2 rounded-lg bg-gray-500 text-white cursor-copy text-sm text-center my-4">
-                                        C:\Users\{UserProfile}\AppData\Local\open_cmap\app-1.0.0\resources\app
-                                    </div>
-
-                                    <p class="max-w-xl text-base tracking-tight text-gray-600">
                                         A post-installer is a software component or script that runs after an application has been installed on a user's computer. Its primary purpose is to perform additional setup or configuration tasks that are required to prepare the application for use.
                                         <br>
                                         If you don't want to install on your local computer you can access online version from our web here
                                         <a href="https://open-cmap.fly.dev" class="text-sky-400 font-bold hover:underline decoration-wavy">Open CMAP</a>
-                                    </p>
-                                </div>
-
-                                <div class="flex flex-col items-center justify-center gap-3 mt-10 lg:flex-row lg:justify-start">
-                                    <button onclick="checkConnection()" class="items-center justify-center w-full px-6 py-2.5  text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none lg:w-auto focus-visible:outline-black text-sm focus-visible:ring-black">
-                                        Check App
-                                    </button>
-                                    <a href="https://github.com/ZakaCoding/open-cmap#readme" class="inline-flex items-center justify-center text-sm font-semibold text-black duration-200 hover:text-blue-500 focus:outline-none focus-visible:outline-gray-600">
-                                        Learn more &nbsp; →
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div id="success" class=" max-w-lg" hidden>
-                                <h2 class="text-2xl font-medium tracking-tight text-black sm:text-4xl text-center">
-                                    Your App Ready to use
-                                </h2>
-                                <p class="mt-4">
-                                    This App will close in a second and run Open CMAP.
-                                </p>
-                                <div class="flex flex-col items-center justify-center gap-3 mt-10 lg:flex-row lg:justify-start">
-                                    <a href="https://github.com/ZakaCoding/open-cmap#readme" class="items-center justify-center w-full px-6 py-2.5  text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none lg:w-auto focus-visible:outline-black text-sm focus-visible:ring-black">
-                                        Any Question, visit our github page &nbsp; →
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="step animate__animated fixed inset-0" id="step-2" hidden>
-            <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl">
-                <div class="flex w-full mx-auto">
-                    <div class="inline-flex items-center m-auto align-middle">
-                        <div class="max-w-6xl p-10 overflow-hidden bg-white rounded-3xl lg:p-20">
-                            <div class="max-w-lg">
-                                <div>
-                                    <p class="text-2xl font-medium tracking-tight text-black sm:text-4xl">
-                                        Check before start Installation
-                                    </p>
-                                    <ul class="gap-4 mt-6 space-y-3 list-none lg:gap-6" role="list">
-                                        <li class="flex items-center">
-                                            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-check-lg fill-green-400 h-7" viewBox="0 0 16 16">
-                                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-                                            </svg> -->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-x-lg fill-red-500 h-7" viewBox="0 0 16 16">
-                                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                            </svg>
-                                            <span class="ml-3 text-gray-500"> Internet Connection </span>
-                                        </li>
-                                        <li class="flex items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-check-lg fill-green-400 h-7" viewBox="0 0 16 16">
-                                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-                                            </svg>
-                                            <span class="ml-3 text-gray-500"> NodeJS </span>
-                                        </li>
-                                    </ul>
-                                    <p class="my-4">
-                                        We need 
                                     </p>
                                 </div>
                                 <div class="flex flex-col items-center justify-center gap-3 mt-10 lg:flex-row lg:justify-start">
@@ -109,9 +40,304 @@
                 </div>
             </div>
         </section>
+
+        <!-- installation check -->
+        <section class="step animate__animated fixed inset-0" id="step-2" hidden>
+            <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl">
+                <div class="flex w-full mx-auto">
+                    <div class="inline-flex items-center m-auto align-middle">
+                        <div class="max-w-6xl p-10 overflow-hidden bg-white rounded-3xl lg:p-20">
+                            <div class="max-w-lg">
+                                <div>
+                                    <p class="text-2xl font-medium tracking-tight text-black sm:text-4xl">
+                                        Check before start Installation
+                                    </p>
+                                    <ul class="gap-4 mt-6 space-y-3 list-none lg:gap-6" role="list" id="check-list">
+                                        <!-- Generate by Javascript -->
+                                    </ul>
+                                    <p class="my-4">
+                                        All the requirements have been met. If any requirement is not met, please check back later. :) then continue installation.
+                                    </p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center gap-3 mt-10 lg:flex-row lg:justify-start">
+                                    <button class="next-button items-center justify-center w-full px-6 py-2.5 mr-3 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none lg:w-auto focus-visible:outline-black text-sm focus-visible:ring-black">
+                                        Continue Installation
+                                    </button>
+                                    <a href="https://github.com/ZakaCoding/open-cmap#readme" class="inline-flex items-center justify-center text-sm font-semibold text-black duration-200 hover:text-blue-500 focus:outline-none focus-visible:outline-gray-600">
+                                        Learn more &nbsp; →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Start installation -->
+        <section class="step animate__animated fixed inset-0" id="step-3" hidden>
+            <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl">
+                <div class="flex w-full mx-auto">
+                    <div class="inline-flex items-center m-auto align-middle">
+                        <div class="max-w-6xl p-10 overflow-hidden bg-white rounded-3xl lg:p-20">
+                            <div class="max-w-lg">
+                                <div>
+                                    <p class="text-2xl font-medium tracking-tight text-black sm:text-4xl" id="installation-tittle">
+                                        Installation on process...
+                                    </p>
+                                    <p class="my-4" id="installation-message">
+                                        "Please wait while we work our magic! ✨ <br> Our invisible gnomes are diligently building the digital kingdom, one bit at a time. You might want to grab a cup of coffee, or better yet, put on your wizard hat and join our digital adventures. 🧙‍♂️✨"
+                                    </p>
+                                </div>
+                                <div class="mt-10 w-full" id="installation-proccess">
+                                    <button id="btn-wait" class="flex justify-between items-center px-6 py-2.5 text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none lg:w-auto focus-visible:outline-black text-sm focus-visible:ring-black">
+                                        <div class="w-5 h-5 border-t-4 border-blue-500 border-solid rounded-full animate-spin mr-2"></div>
+                                        Please wait... :)
+                                    </button>
+                                </div>
+                                <div class="mt-10 w-full" id="installation-done" hidden>
+                                    <button id="btn-done" class="flex justify-between items-center next-button px-6 py-2.5 text-white duration-200 bg-green-500 border-2 border-green-500 rounded-full inline-flex hover:bg-transparent hover:border-green-500 hover:text-green-600 focus:outline-none lg:w-auto focus-visible:outline-green-500 text-sm focus-visible:ring-green-500">
+                                        Done, next step &nbsp; →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup database and run database migration -->
+        <section class="step animate__animated absolute inset-0" id="step-4" hidden>
+            <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl">
+                <div class="flex w-full mx-auto">
+                    <div class="inline-flex items-center m-auto align-middle">
+                        <div class="max-w-6xl p-10 overflow-hidden bg-white rounded-3xl lg:p-20">
+                            <div class="max-w-lg">
+                                <div>
+                                    <p class="text-2xl font-medium tracking-tight text-black sm:text-4xl" id="installation-tittle">
+                                        Setup database and run migration
+                                    </p>
+                                    <p class="my-4" id="installation-message">
+                                        Your app need database to save all concept map data, so you need setup database. This Application by default using MySQL for Database Management System,
+                                        but don't worry you can also using PostgreSQL. Follow this instructions for setup database and migration.
+                                    </p>
+                                    <div class="bg-slate-100 p-2 px-4 text-slate-500 rounded-lg">
+                                        Before run migration, make sure to start your Database Management System
+                                    </div>
+
+                                    <!-- form -->
+                                    <div class="mt-4">
+                                        <form id="form-migration">
+                                            <input autocomplete="false" name="hidden" style="display: none">
+                                            <input name="_redirect" type="hidden" value="#">
+                                            <div class="mt-4 space-y-6">
+                                            <div>
+                                                <label class="block mb-3 text-sm font-medium text-gray-600" name="name">
+                                                Database Name
+                                                </label>
+                                                <input name="DB_DATABASE" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" placeholder="e.g web_based_cmap" required>
+                                            </div>
+                                            <div class="col-span-full">
+                                                <label class="block mb-3 text-sm font-medium text-gray-600" name="company">
+                                                Database Connection
+                                                </label>
+                                                <select name="DB_CONNECTION" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" required>
+                                                    <option value="mysql">MySQL</option>
+                                                    <option value="postgresql">PostgreSQL</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-span-full">
+                                                <label class="block mb-3 text-sm font-medium text-gray-600" name="email">
+                                                Database Port Connection
+                                                </label>
+                                                <input name="DB_PORT" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" placeholder="e.g 3306" autocomplete="off" type="text" required>
+                                            </div>
+                                            <div class="col-span-full">
+                                                <label class="block mb-3 text-sm font-medium text-gray-600" name="email">
+                                                Database Username
+                                                </label>
+                                                <input name="DB_USERNAME" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" placeholder="Enter Username" autocomplete="off" type="text" required>
+                                            </div>
+                                            <div class="col-span-full">
+                                                <label class="block mb-3 text-sm font-medium text-gray-600" name="email">
+                                                Database Password
+                                                </label>
+                                                <input name="DB_PASSWORD" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 appearance-none rounded-xl placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" autocomplete="off" type="password">
+                                            </div>
+                                            <div class="col-span-full" id="migration-button">
+                                                <button type="submit" class="flex items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full nline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black">
+                                                    Run database migration
+                                                </button>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Complete setup -->
+        <section class="step animate__animated fixed inset-0" id="step-5" hidden>
+            <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl">
+                <div class="flex w-full mx-auto">
+                    <div class="inline-flex items-center m-auto align-middle">
+                        <div class="max-w-6xl p-10 overflow-hidden bg-white rounded-3xl lg:p-20">
+                            <div class="max-w-lg">
+                                <div>
+                                    <p class="text-2xl font-medium tracking-tight text-black sm:text-4xl" id="installation-tittle">
+                                        Well done!
+                                    </p>
+                                    <p class="my-4" id="installation-message">
+                                        🎉 Congratulations! Installation is complete. Time to celebrate! 🚀
+                                    </p>
+
+                                    <img src="well-done.webp" class="my-3" alt="">
+                                </div>
+                                <div class="mt-10 w-full">
+                                    <button id="btn-complete" class="flex justify-between items-center px-6 py-2.5 text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none lg:w-auto focus-visible:outline-black text-sm focus-visible:ring-black">
+                                        Restart Application
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script deffer>
+        /**
+         * Add global variable bellow
+         */
+        const { ipcRenderer } = require('electron');
+
+        ipcRenderer.on('composer-status', (event, isInstalled) => {
+            if (isInstalled) {
+                createCheckStatus('Composer is installed.', isInstalled);
+            } else {
+                createCheckStatus('Composer is not installed.', isInstalled);
+            }
+        });
+
+        ipcRenderer.on('php-status', (event, isInstalled) => {
+            if (isInstalled) {
+                createCheckStatus('PHP is installed.', isInstalled);
+            } else {
+                createCheckStatus('PHP is not installed.', isInstalled);
+            }
+        });
+
+        ipcRenderer.on('node-status', (event, isInstalled) => {
+            if (isInstalled) {
+                createCheckStatus('Node.js is installed.', isInstalled);
+            } else {
+                createCheckStatus('Node.js is not installed.', isInstalled);
+            }
+        });
+
+        ipcRenderer.on('internet-status', (event, isConnected) => {
+            if (isConnected) {
+                createCheckStatus('Internet connection is available.', isConnected);
+            } else {
+                createCheckStatus('No internet connection available.', isConnected);
+            }
+        });
+
+        ipcRenderer.on('installation-status', (event, catchMessage, isDone) => {
+            if(isDone) {
+                // hidden loading btn
+                document.querySelector('#installation-proccess').setAttribute('hidden', 'hidden');
+
+                document.querySelector('#installation-done').removeAttribute('hidden');
+            }
+        });
+
+        ipcRenderer.on('database-status', (event, isDone) => {
+            if (isDone) {
+                // Setup database on env file success
+                console.log("Database setup success", isDone);
+            }
+        });
+
+        ipcRenderer.on('migration-status', (event, catchMessage, isDone) => {
+            if (!isDone) {
+                // Handle the error case
+                console.error("Error:", catchMessage);
+
+                // You can also show an alert or display the error message to the user if needed.
+                alert("Oh no! 🙁 Something went wrong. Please double-check your database configuration. We can't run the migration. But don't worry, we'll get there! 🚀")
+            } else {
+                // Handle the success case
+                console.log("Hooray! 😄 Migration completed successfully. Enjoy your smooth sailing! 🌊");
+
+                document.querySelector('#migration-proccess').setAttribute('hidden', 'hidden');
+                document.querySelector('#migration-success').removeAttribute('hidden');
+
+                setTimeout(() => {
+                    hideStep(steps[currentStep]);
+                    currentStep = index + 1;
+                    showStep(steps[currentStep]);
+                }, 2000);
+            }
+        });
+
+        // setup complete
+        document.querySelector('#btn-complete').addEventListener('click', () => {
+            ipcRenderer.send('setup-complete');
+        });
+
+        function createCheckStatus(message, status) {
+            const failIcon = `
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-x-lg fill-red-500 h-7" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            `;
+
+            const successIcon = `
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-check-lg fill-green-400 h-7" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                </svg>
+            `;
+
+            const list = document.createElement('li');
+            list.classList.add("flex", "items-center");
+
+            list.innerHTML = (status ? successIcon : failIcon) + message;
+            document.querySelector('#check-list').appendChild(list);
+        }
+
+        // Migrations
+        const formMigration = document.querySelector('#form-migration');
+
+        formMigration.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const DB_CONNECTION = document.querySelector('[name="DB_CONNECTION"]').value;
+            const DB_PORT = document.querySelector('[name="DB_PORT"]').value;
+            const DB_DATABASE = document.querySelector('[name="DB_DATABASE"]').value;
+            const DB_USERNAME = document.querySelector('[name="DB_USERNAME"]').value;
+            const DB_PASSWORD = document.querySelector('[name="DB_PASSWORD"]').value;
+
+            // Now you can send the form data to the main process using ipcRenderer
+            const formData = {
+                DB_CONNECTION,
+                DB_PORT,
+                DB_DATABASE,
+                DB_USERNAME,
+                DB_PASSWORD,
+            };
+
+            ipcRenderer.send('setup-database', formData);
+            ipcRenderer.send('start-migration');
+        });
+
         // JavaScript code for handling multi-step form logic with animations
         const form = document.getElementById("multi-step-form");
         const steps = form.querySelectorAll(".step");
@@ -121,10 +347,31 @@
         let currentStep = 0;
 
         function showStep(step) {
+            
             setTimeout(() => {
                 step.removeAttribute("hidden");
                 step.classList.add("animate__fadeInUp");
+
+                const step2 = document.querySelector('#step-2').hasAttribute('hidden');
+                const step3 = document.querySelector('#step-3').hasAttribute('hidden');
+
+                if(!step2)
+                {
+                    // Sent all request async to with ipcRenderer
+                    ipcRenderer.send('check-composer');
+                    ipcRenderer.send('check-php');
+                    ipcRenderer.send('check-node');
+                    ipcRenderer.send('check-internet');
+                }
+
+                if(!step3)
+                {
+                    console.log("Start installation proccess...");
+                    // sent request to ipc to start installation
+                    ipcRenderer.send('start-installation');
+                }
             }, 1000)
+
         }
 
         function hideStep(step) {
@@ -150,41 +397,6 @@
                 showStep(steps[currentStep]);
             });
         });
-    </script>
-
-    <script>
-        /**
-         * Add global variable bellow
-         */
-        const { ipcRenderer } = require('electron');
-
-        /**
-         * Check App Connection
-         */
-
-         function checkConnection() {
-            const serverURL = 'http://localhost:8000'; // Replace with the server URL
-
-            fetch(serverURL)
-            .then(response => {
-                if (response.ok) {
-                    // console.log('Server is running and responded with status code 200.');
-                    document.querySelector('#success').removeAttribute('hidden');
-                    document.querySelector('#failed').setAttribute('hidden', 'hidden');
-
-                    setTimeout(() => {
-                        // request complete
-                        ipcRenderer.send('setup-complete');
-
-                        // alert("Hell yeah!");
-                    }, 2000);
-                }
-            })
-            .catch(error => {
-                // console.log('Server is not running or encountered an error', error);
-                alert('Server is not running or encountered an error');
-            });
-         }
     </script>
 </body>
 </html>
