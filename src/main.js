@@ -33,14 +33,24 @@ let phpServer;
 const setupConfig = path.join(__dirname, 'config', 'setup-status.txt');
 
 let isFirstSetup = () => {
-  // // Create the file path for the setup status file within the 'src' directory
-  // Check if the setup status file exists
-  const data = fs.readFileSync(setupConfig, 'utf8');
-  if (data) {
-    return data;
+  try {
+    // Attempt to read the setup status file
+    const data = fs.readFileSync(setupConfig, 'utf8');
+
+    // Check if the file contains "true" or "false"
+    if (data === 'true') {
+      return true; // First setup
+    } else if (data === 'false') {
+      return false; // Not the first setup
+    } else {
+      return true; // Default to first setup if the file contains unexpected data
+    }
+  } catch (error) {
+    // Handle any errors, e.g., file not found
+    return true; // Default to first setup in case of an error
   }
-  return true;
 };
+
 
 // Prerequisite
 function checkInstallation() {
@@ -82,7 +92,7 @@ function createWindow() {
   });
 
   // Load the setup.html file if it's the first setup
-  if (isFirstSetup) {
+  if (isFirstSetup()) { // Call isFirstSetup with ()
     checkInstallation();
     // mainWindow.loadURL(`file://${__dirname}/index.html`);
   } else {
