@@ -23,4 +23,8 @@ echo.
 echo All PHP required files success installed...
 timeout /t 2 > nul
 
+REM Copy .env.example to .env (assuming .env.example exists)
+echo Copy env file
+copy .env.example .env
+
 echo Application setup complete.
