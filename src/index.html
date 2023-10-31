@@ -178,8 +178,11 @@
                                             </div>
                                             <div class="col-span-full" id="migration-success" hidden>
                                                 <button type="button" class="next-button flex items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-green-500 border-2 border-green-500 rounded-full nline-flex hover:bg-transparent hover:border-green-500 hover:text-green-500 focus:outline-none focus-visible:outline-green-500 text-sm focus-visible:ring-green-400">
-                                                    Voila, you made it.
+                                                    Last step :)
                                                 </button>
+                                                <p class="my-2">
+                                                    Hooray! 😄 Migration completed successfully. Enjoy your smooth sailing! 🌊
+                                                </p>
                                             </div>
                                         </form>
                                     </div>
@@ -288,7 +291,7 @@
 
             if (breakReplyMessage('Migration success', catchMessage)) {
                 // Handle the success case
-                // console.log("Oh no! 🙁 Something went wrong. Please double-check your database configuration. We can't run the migration. But don't worry, we'll get there! 🚀");
+                // console.log("Hooray! 😄 Migration completed successfully. Enjoy your smooth sailing! 🌊");
     
                 document.querySelector('#migration-start').setAttribute('hidden', true);
                 document.querySelector('#migration-proccess').setAttribute('hidden', true);
@@ -297,7 +300,7 @@
             
             if (breakReplyMessage('Migration failed', catchMessage)) {
                 // Handle then error case
-                // console.log("Hooray! 😄 Migration completed successfully. Enjoy your smooth sailing! 🌊");
+                // console.log("Oh no! 🙁 Something went wrong. Please double-check your database configuration. We can't run the migration. But don't worry, we'll get there! 🚀");
 
                 document.querySelector('#migration-start').removeAttribute('hidden');
                 document.querySelector('#migration-proccess').setAttribute('hidden', true);
