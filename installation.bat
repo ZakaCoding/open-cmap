@@ -23,6 +23,13 @@ echo.
 echo All PHP required files success installed...
 timeout /t 2 > nul
 
+REM Build frontend
+echo Build for production
+call npm run build
+
+echo Build done...
+timeout /t 2 > nul
+
 REM Copy .env.example to .env (assuming .env.example exists)
 echo Copy env file
 copy .env.example .env
