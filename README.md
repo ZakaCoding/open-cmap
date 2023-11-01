@@ -24,7 +24,8 @@ CHEERSSS... 🥂
 
 ## About Open CMAP Tools
 
-Open CMAP Tools is design for Learner and Teacher for making Concept Mapping is also for assignment system. This web app develop for College Final Project. Tools build with Laravel and GoJS and based on web app, this tools also Open Source project, you can modify for task or research.
+Open CMAP Tools is design for Learner and Teacher for making Concept Mapping with Reflective open-ended feature, about this feature is for reflect a concept map create by client with analysist include.
+This web app, research and develop for College Final Project. Build with Laravel and GoJS, this tools also Open Source project, you can modify for task or research.
 
 ## Security Vurnability
 
